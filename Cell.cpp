@@ -28,6 +28,9 @@ void Cell::init()
 	    std::cin >> x >> y;
 	    m_cells[x+1][y+1] = true;
 	  }
+	  clearScreen();
+	  std::cout<< "Entered State of the cells"<<std::endl;
+	  printGrid();
 }
 
 void Cell::printGrid()
@@ -109,5 +112,6 @@ void Cell::update()
         }
     }
     clearScreen();
+    std::cout<< "State After One Click"<<std::endl;
     printGrid();
 }
