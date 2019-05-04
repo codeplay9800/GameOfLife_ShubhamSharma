@@ -1,25 +1,21 @@
 # depslib dependency file v1.0
-1556981381 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.cpp
+1556991702 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.cpp
 	"Cell.h"
 	<iostream>
 	<vector>
 
-1556980211 c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.h
+1556991692 c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.h
 	<vector>
 
-1556981293 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\main.cpp
+1556991877 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\main.cpp
 	<iostream>
-	<cstdlib>
-	<unistd.h>
-	<fstream>
 	<string>
-	<sstream>
 	"Cell.h"
 	"MainMenu.h"
 
-1556979969 c:\users\sharm\desktop\gameoflife_shubhamsharma\mainmenu.h
+1556990253 c:\users\sharm\desktop\gameoflife_shubhamsharma\mainmenu.h
 
-1556979757 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\mainmenu.cpp
+1556991404 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\mainmenu.cpp
 	<iostream>
 	"MainMenu.h"
 	<string>

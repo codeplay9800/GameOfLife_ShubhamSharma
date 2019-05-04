@@ -2,8 +2,10 @@
 #include <iostream>
 #include <vector>
 
-const int gridSize = 100;
+const int gridSize = 25;
+
 bool m_cells[gridSize+1][gridSize+1];
+
 Cell::Cell(int cell)
 {
     this->num_cell=cell;

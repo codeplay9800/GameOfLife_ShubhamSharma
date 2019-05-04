@@ -29,7 +29,6 @@ MainMenu::MainMenu()
     cout << "- - dead cell" << endl;
     cout << endl;
     cout << "Enter the number of Alive cells ";
-
     cout << endl;
 }
 
