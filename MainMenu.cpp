@@ -1,6 +1,10 @@
 #include<iostream>
+#include"MainMenu.h"
+#include <string>
 
-MainMenu::Display()
+using namespace std;
+
+MainMenu::MainMenu()
 {
     string start;
     string filename;
@@ -21,10 +25,15 @@ MainMenu::Display()
     cout << "3. Any live cell with more than three live neighbours dies, as if by over-population." << endl;
     cout << "4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction." << endl;
     cout << endl;
-    cout << "O - living cell" << endl;
-    cout << ". - dead cell" << endl;
+    cout << "X - living cell" << endl;
+    cout << "- - dead cell" << endl;
     cout << endl;
-    cout << "Enter the number of cells, or 'r' to read cells from file: ";
+    cout << "Enter the number of Alive cells ";
 
     cout << endl;
+}
+
+MainMenu::~MainMenu()
+{
+
 }

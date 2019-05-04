@@ -2,12 +2,17 @@
 #include <iostream>
 #include <vector>
 
-const int gridSize = 25;
+const int gridSize = 100;
 bool m_cells[gridSize+1][gridSize+1];
 Cell::Cell(int cell)
 {
     this->num_cell=cell;
     bool m_cells[gridSize+1][gridSize+1] = {};
+}
+
+Cell::~Cell()
+{
+
 }
 
 void Cell::init()
@@ -45,7 +50,6 @@ void Cell::printGrid()
     }
 }
 void Cell:: clearScreen(void) {
-    // Tested and working on Ubuntu and Cygwin
     #if defined(_WIN32) || defined(WIN32) || defined(__MINGW32__) || defined(__BORLANDC__)
         #define OS_WIN
     #endif

@@ -4,13 +4,8 @@
 
 class Cell
 {
-/*    enum Life
-    {
-        On,
-        Off
-    };
-*/
     public:
+        ~Cell();
         Cell(int cell);
         int num_cell;
         void update();
