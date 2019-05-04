@@ -4,8 +4,6 @@
 
 class Cell
 {
-    private:
-        std::vector<Cell> *m_cells;
 /*    enum Life
     {
         On,
@@ -13,10 +11,11 @@ class Cell
     };
 */
     public:
-        bool alive;
         Cell(int cell);
         int num_cell;
         void update();
-
+        void init();
+        void printGrid();
+        void clearScreen();
 
 };

@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1556978056 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.cpp
+	"Cell.h"
+	<iostream>
+	<vector>
+
+1556977535 c:\users\sharm\desktop\gameoflife_shubhamsharma\cell.h
+	<vector>
+
+1556977917 source:c:\users\sharm\desktop\gameoflife_shubhamsharma\main.cpp
+	<iostream>
+	<cstdlib>
+	<unistd.h>
+	<fstream>
+	<string>
+	<sstream>
+	"Cell.h"
+

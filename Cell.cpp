@@ -1,33 +1,25 @@
 #include "Cell.h"
 #include <iostream>
+#include <vector>
 
 const int gridSize = 25;
-
+bool m_cells[gridSize+1][gridSize+1];
 Cell::Cell(int cell)
 {
-    *m_cells = new Cell(cell)
     this->num_cell=cell;
-    for(int i=0;i<gridSize;i++)
-    {
-        for(int j=0;j<gridSize;j++)
-        {
-            m_cells[i][j]->alive = false;
-        }
-    }
+    bool m_cells[gridSize+1][gridSize+1] = {};
 }
 
 void Cell::init()
 {
-    int input_count = cell;
     int x,y;
-    cin>>x>>y;
     for(int i=0;i<num_cell;i++)
 	  {
-	    cout << "Enter the coordinates of cell " << i+1 << " : ";
-	    cin >> x >> y;
-	    m_cells[x][y]->alive = true;
-	    gridOne[x][y] = true;
-	    printGrid(gridOne);
+        clearScreen();
+        printGrid();
+	    std::cout << "Enter the coordinates of cell " << i+1 << " : ";
+	    std::cin >> x >> y;
+	    m_cells[x+1][y+1] = true;
 	  }
 }
 
@@ -37,22 +29,79 @@ void Cell::printGrid()
         {
         for(int b = 1; b < gridSize; b++)
         {
-            if(m_cells[a][b]->alive == true)
+            if(m_cells[a][b] == true)
             {
-                cout << " O ";
+                std::cout << " X ";
             }
             else
             {
-                cout << " . ";
+                std::cout << " - ";
             }
             if(b == gridSize-1)
             {
-                cout << endl;
+                std::cout << std::endl;
             }
         }
     }
 }
+void Cell:: clearScreen(void) {
+    // Tested and working on Ubuntu and Cygwin
+    #if defined(_WIN32) || defined(WIN32) || defined(__MINGW32__) || defined(__BORLANDC__)
+        #define OS_WIN
+    #endif
+
+    #ifdef OS_WIN
+        system("CLS");
+    #endif
+
+    #if defined(linux) || defined(__CYGWIN__)
+        system("clear");
+    #endif
+}
 
 void Cell::update()
 {
+    bool m_cells2[gridSize+1][gridSize+1] = {};
+    for(int a =0; a < gridSize; a++)
+    {
+        for(int b = 0; b < gridSize; b++)
+        {
+                m_cells2[a][b] = m_cells[a][b];
+        }
+    }
+
+    for(int a = 1; a < gridSize; a++)
+    {
+        for(int b = 1; b < gridSize; b++)
+        {
+            int alive = 0;
+            for(int c = -1; c < 2; c++)
+            {
+                for(int d = -1; d < 2; d++)
+                {
+                    if(!(c == 0 && d == 0))
+                    {
+                        if(m_cells2[a+c][b+d])
+				{
+					++alive;
+				}
+                    }
+                }
+            }
+            if(alive < 2)
+            {
+                m_cells[a][b] = false;
+            }
+            else if(alive == 3)
+            {
+                m_cells[a][b] = true;
+            }
+            else if(alive > 3)
+            {
+                m_cells[a][b] = false;
+            }
+        }
+    }
+    clearScreen();
+    printGrid();
 }
